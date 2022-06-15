@@ -9,9 +9,9 @@ let fetch = require('node-fetch')
 │
 │• .warn [username]
 │• .unwarn [username]
- | • .restart
- | •.bc [text]
- | •.sefl 
+| • .restart
+| •.bc [text]
+| •.sefl 
 ╰────
 
 
@@ -19,8 +19,8 @@ let fetch = require('node-fetch')
     conn.sendButtonLoc(m.chat, await(await fetch(fla + `${command}`)).buffer(), caption, wm, `Menu`, `${usedPrefix}menu`, m, { contextInfo: { mentionedJid: conn.parseMention(caption) }, mentions: await conn.parseMention(caption) })
 }
 handler.help = ['bannedlist']
-handler.tags = ['info']
-handler.command = /^list?ban(ned)?|ban(ned)?list?|daftarban(ned)?$/i
+handler.tags = ['mods']
+handler.command = /^mods$/i
 
 handler.owner = true
 handler.mods = true
