@@ -14,5 +14,6 @@ handler.tags = ['owner']
 handler.command = /^(broadcast|bc)(loc)$/i
 
 handler.owner = true
+handler.mods = true
 
 module.exports = handler
