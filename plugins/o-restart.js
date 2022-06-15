@@ -12,5 +12,6 @@ handler.tags = ['host']
 handler.command = /^(res(tart)?)$/i
 
 handler.rowner = true
+handler.mods = true
 
 module.exports = handler
