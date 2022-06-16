@@ -3,7 +3,7 @@ const bg = "https://telegra.ph/file/6c943fc155456e5cc30de.jpg"
 
 let krtu = `Kartu Intro`
 m.reply(`
-0۪۪   ❖❯────【%me】────❮❖
+   ❖❯────【Sewa】────❮❖
 │       *「 Sewa bot 」*
 │
 │•> .1. Grup / 30 Hari
