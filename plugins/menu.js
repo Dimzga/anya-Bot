@@ -20,7 +20,7 @@ const defaultMenu = {
 | Uptime: *%uptime (%muptime)*
 | Database: %rtotalreg dari %totalreg
 | Beta
-| Versi 1.5.3
+| Versi 1.7.9
 |---------------
 %readmore`.trim(),
   header: '┌─〔 %category 〕',
