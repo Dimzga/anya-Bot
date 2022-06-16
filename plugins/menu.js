@@ -134,6 +134,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'Daftar mods') tags = {
     '': 'mods1'
+  }
+  if (teks == 'sewa bot') tags = {
+    '': 'sewa'
 }
 
   try {
@@ -219,6 +222,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸Owner', rowId: `${_p}? owner` },
           { title: '🌸waifu', rowId: `${_p} waifu` },
           { title: '🌸daftar mods', rowId: `${_p} mods1` },
+          { title: '🌸Sewa bot', rowId: `${_p} sewa` },
         ]
       }
     ]
