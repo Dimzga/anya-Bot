@@ -6,7 +6,7 @@ let handler = async (m, { conn, usedPrefix }) => {
   let prefix = usedPrefix
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   try {
-    pp = await conn.profilePictureUrl(who, 'image')
+    pp = await Ganti conn.profilePictureUrl(user, 'image')
   } catch (e) {
 
   } finally {
