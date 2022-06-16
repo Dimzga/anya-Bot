@@ -1,4 +1,4 @@
-const bg = "https://telegra.ph/file/6c943fc155456e5cc30de.jpg"
+const bg = "https://telegra.ph/file/8a8b9397a0f1e317b3342.mp4"
 let handler = m => m
 handler.before = function (m) {
     let user = global.db.data.users[m.sender]
