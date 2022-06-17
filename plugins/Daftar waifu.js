@@ -2,7 +2,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   let ar = ['.loli']
   let ras = `Halo Kak @${m.sender.split('@')[0]}`
 const bg = "https://telegra.ph/file/6c943fc155456e5cc30de.jpg"
-  let sel = `Pilih Nama Waifu Versi 1.5.0`
+  let sel = `Pilih Nama Waifu Versi 1.7.3`
   let rs = `Pilih Disini`
   const sections = [ {
            title: `Silahkan Pilih Waifu Favorit-mu!`,
