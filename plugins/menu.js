@@ -70,6 +70,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
   }
+  if (teks == 'asupanloli') tags = {
+    'asupan': 'asupan'
+  }
+  if (teks == 'nfsw') tags = {
+    'nswf': 'nsfw'
+  }
   if (teks == 'stiker') tags = {
     'sticker': 'Stiker'
   }
