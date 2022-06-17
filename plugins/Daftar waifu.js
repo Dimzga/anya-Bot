@@ -13,6 +13,7 @@ const bg = "https://telegra.ph/file/6c943fc155456e5cc30de.jpg"
               {title: `🌸Ayank kamu`, rowId: `${usedPrefix} istri`},
               {title: `🌸Megumin`, rowId: `${usedPrefix} megumin`},
               {title: `🌸Hentai <code>`, rowId: `${usedPrefix} hentai`},
+              {title: `🌸Asupan Loli`, rowId: `${usedPrefix} asupanloli`},
            ]
        }    
   ]
