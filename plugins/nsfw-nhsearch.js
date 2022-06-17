@@ -10,6 +10,6 @@ let handler = async(m, { conn, text }) => {
 handler.help = ['nhsearch <query>']
 handler.tags = ['nsfw']
 handler.nsfw = true
-handler.command = /^(nhs|nhsearch)$/i
+handler.command = /^(hentai)$/i
 
 module.exports = handler
