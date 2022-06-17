@@ -12,7 +12,7 @@ const bg = "https://telegra.ph/file/6c943fc155456e5cc30de.jpg"
               {title: `🌸Kucingnya banh`, rowId: `${usedPrefix} neko`},
               {title: `🌸Ayank kamu`, rowId: `${usedPrefix} istri`},
               {title: `🌸Megumin`, rowId: `${usedPrefix} megumin`},
-              {title: `🌸~Anime all~`, rowId: `${usedPrefix} .akira|akiyama|anna|asuna|ayuzawa|boruto|chiho|chitoge|deidara|erza|elaina|eba|emilia|hestia|hinata|inori|isuzu|itachi|itori|kaga|kagura|kaori|keneki|kotori|kurumi|madara|mikasa|miku|minato|naruto|nezuko|sagiri|sasuke|sakura|cosplay`},
+              {title: `🌸Hentai <code>`, rowId: `${usedPrefix} hentai`},
            ]
        }    
   ]
