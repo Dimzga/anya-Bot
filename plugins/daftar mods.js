@@ -16,7 +16,7 @@ m.reply(`
 `.trim()) // Tambah sendiri kalo mau
 }
 handler.command = /^(mods1)$/i
-handler.mods = true
-handler.owner = true
+handler.mods = false
+handler.owner = false
 
 module.exports = handler
