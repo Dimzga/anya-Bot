@@ -7,6 +7,8 @@ m.reply(`
 
 .akiyama
 
+.gawrgura
+
 .anna
 
 .asuna
