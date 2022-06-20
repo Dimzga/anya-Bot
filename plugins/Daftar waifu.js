@@ -2,7 +2,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   let ar = ['.loli']
   let ras = `Halo Kak @${m.sender.split('@')[0]}`
 const bg = "https://telegra.ph/file/6c943fc155456e5cc30de.jpg"
-  let sel = `Pilih Nama Waifu Versi 1.7.3`
+  let sel = `Pilih Nama Waifu Versi 1.9,5`
   let rs = `Pilih Disini`
   const sections = [ {
            title: `Silahkan Pilih Waifu Favorit-mu!`,
@@ -12,7 +12,7 @@ const bg = "https://telegra.ph/file/6c943fc155456e5cc30de.jpg"
               {title: `🌸Kucingnya banh`, rowId: `${usedPrefix} neko`},
               {title: `🌸Ayank kamu`, rowId: `${usedPrefix} istri`},
               {title: `🌸Megumin`, rowId: `${usedPrefix} megumin`},
-              {title: `🌸Hentai <code>`, rowId: `${usedPrefix} hentai`},
+              {title: `🌸Gawrgura`, rowId: `${usedPrefix} gawrgura`},
               {title: `🌸Asupan Loli`, rowId: `${usedPrefix} asupanloli`},
               {title: `🌸ANIME ALL~`, rowId: `${usedPrefix} animeall`},
            ]
