@@ -1,8 +1,8 @@
-const bg = "https://telegra.ph/file/e114f7bd133a5bc628cbe.jpg"
 let handler = async(m, { conn, usedPrefix, text }) => {
     let user = global.db.data.users[m.sender]
     user.afk = + new Date
     user.afkReason = text
+const bg = "https://telegra.ph/file/e114f7bd133a5bc628cbe.jpg"
     conn.sendButton(m.chat, `
 ${conn.getName(m.sender)} sekarang AFK${text ? ': ' + text : ''}
 `, wm, `Menu`, `${usedPrefix}menu`, m)
