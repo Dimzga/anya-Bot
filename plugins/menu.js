@@ -20,7 +20,7 @@ const defaultMenu = {
 | Uptime: *%uptime (%muptime)*
 | Database: %rtotalreg dari %totalreg
 | Beta
-| Versi 1.7.9
+| Versi 2.0.1
 |---------------
 %readmore`.trim(),
   header: '┌─〔 %category 〕',
@@ -236,7 +236,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       text: judul,
       footer: wm,
       mentions: await conn.parseMention(judul),
-      title: '',
+      title: 'test',
       buttonText: "Nih menunya kak🐱",
       sections
     }
