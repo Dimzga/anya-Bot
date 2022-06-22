@@ -1,4 +1,3 @@
-process.env.TZ = 'Asia/Jakarta'
 let levelling = require('../lib/levelling')
 let fs = require('fs')
 let path = require('path')
