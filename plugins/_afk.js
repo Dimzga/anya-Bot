@@ -1,4 +1,4 @@
-const bg = "https://telegra.ph/file/c09177b5cdf463a70efaf.jpg"
+const bg = "https://telegra.ph/file/e114f7bd133a5bc628cbe.jpg"
 let handler = m => m
 handler.before = function (m) {
     let user = global.db.data.users[m.sender]
@@ -18,7 +18,6 @@ Selama ${this.clockString(new Date - user.afk)}
         if (!afkTime || afkTime < 0) continue
         let reason = user.afkReason || ''
         this.sendButtonImg(m.chat, bg, `
-const bg = "https://telegra.ph/file/6c943fc155456e5cc30de.jpg"
 Jangan tag dia!
 Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
 Selama ${this.clockString(new Date - afkTime)}
