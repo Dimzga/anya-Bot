@@ -1,3 +1,4 @@
+process.env.TZ = 'Asia/Jakarta'
 let levelling = require('../lib/levelling')
 let fs = require('fs')
 let path = require('path')
@@ -236,7 +237,23 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       text: judul,
       footer: wm,
       mentions: await conn.parseMention(judul),
-      title: 'test',
+      title: ' ❖❯────【%me】────❮❖
+| *%ucapan %name*
+|
+| Tersisa *%limit Limit*
+| Role *%role*
+| Level *%level (%exp / %maxexp)* [%xp4levelup]
+| %totalexp XP secara Total
+| ❖❯────【%week】────❮❖
+| Tanggal: *%week %weton, %date*
+| Tanggal Islam: *%dateIslamic*
+| Waktu: *%time*
+| ❖❯────【%muptime】────❮❖
+| Uptime: *%uptime (%muptime)*
+| Database: %rtotalreg dari %totalreg
+| Beta
+| Versi 2.0.1
+|---------------',
       buttonText: "Nih menunya kak🐱",
       sections
     }
