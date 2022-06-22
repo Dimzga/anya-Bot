@@ -292,7 +292,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let bg = await (await fetch('https://telegra.ph/file/73db390a2bd644372b717.jpg')).buffer()
+    let bg = await (await fetch('https://telegra.ph/file/02e6477c0c54f3d5aabf0.jpg')).buffer()
     await conn.send3TemplateButtonImg(m.chat, bg, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}infobot`)
   } catch (e) {
     conn.reply(m.chat, 'Error by ganzzz', m)
