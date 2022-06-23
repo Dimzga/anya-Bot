@@ -16,7 +16,13 @@ const defaultMenu = {
 | ❖❯────【%week】────❮❖
 | Tanggal: *%week %weton, %date*
 | Tanggal Islam: *%dateIslamic*
-| Waktu: *%time*
+|*Waktu:* 
+| %wib WIB
+| %wita WITA
+| %wit WIT
+| *Hari:* %week
+| *Tanggal:* %date
+| *Uptime:* %uptime (%muptime)
 | ❖❯────【%muptime】────❮❖
 | Uptime: *%uptime (%muptime)*
 | Database: %rtotalreg dari %totalreg
