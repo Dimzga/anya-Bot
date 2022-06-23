@@ -124,6 +124,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
           throw false
         }
       }
+      chat.stiker = isEnable
+      break
+     case 'rpg':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
       chat.antiLink = isEnable
       break
     case 'stiker':
