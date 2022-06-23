@@ -4,7 +4,7 @@ const { promisify } = require('util')
 const { join } = require('path')
 
 let confirmation = {}
-let repository = 'fokusdotid/family-md'
+let repository = 'ariffb25/stikerinbot'
 let branch = 'main'
 
 async function handler(m, { text }) {
@@ -16,13 +16,13 @@ async function handler(m, { text }) {
             res,
             filename,
             text,
-            timeout: setTimeout(() => (conn.send2Button(m.chat, `Timeout, do you want update again?`, wm, `Yes`, `.u2 ${text}`, `No`, `n`, m), delete confirmation[m.sender]), 60000)
+            timeout: setTimeout(() => (m.reply('timed out'), delete confirmation[m.sender]), 60000)
         }
-        return conn.send2Button(m.chat, `The file already exists, are you sure you want to overwrite it?  (Y/n) (60s Timeout)`, wm, `Yes`, `y`, `No`, `n`, m)
+        throw 'File sudah ada, yakin ingin menimpa? (Y/n) (60s Timeout)'
     }
     res.body.pipe(createWriteStream(filename))
     res.body.once('end', () => {
-        m.reply('Update successfully!')
+        m.reply('Berhasil memperbaharui!')
         conn.sendFile(m.chat, filename, text, null, m).catch(console.error)
     })
 }
@@ -46,9 +46,11 @@ handler.all = async m => {
         return !0
     }
 }
+
+handler.rowner = true
 handler.help = ['update2']
 handler.tags = ['host']
-handler.command = ['update2', 'u2', 'uopdate2', 'uo2'] //ANJIRRR VVIBU
+handler.command = ['update2']
 
 handler.rowner = true
 

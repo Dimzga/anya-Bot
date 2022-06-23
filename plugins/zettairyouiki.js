@@ -3,13 +3,13 @@ let handler = async (m, { conn, args }) => {
    response = args.join(' ')
   if (!args) throw 'Masukkan Parameter'
   m.reply('Sedang Diproses...')
-  let res = `https://api.xteam.xyz/asupan/wibu?apikey=MIMINETBOT`
-  conn.sendFile(m.chat, res, 'wibu.mp4', `wangy wangy wangy`, m, false)
+  let res = `https://api.xteam.xyz/randomimage/zettairyouiki?APIKEY=HIRO`
+  conn.sendFile(m.chat, res, 'zettairyouiki.jpg', `Neh Kak`, m, false)
 }
-handler.help = ['wibu'].map(v => v + ' ')
-handler.tags = ['anime']
+handler.help = ['zettairyouiki'].map(v => v + ' ')
+handler.tags = ['random', 'anime']
 
-handler.command = /^(wibu)$/i
+handler.command = /^(zettairyouiki)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
