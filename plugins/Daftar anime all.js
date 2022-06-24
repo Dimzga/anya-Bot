@@ -80,6 +80,7 @@ m.reply(`
 }
 handler.command = /^(animeall)$/i
 handler.mods = false
+handler.tags = ['anime']
 handler.owner = false
 
 module.exports = handler
