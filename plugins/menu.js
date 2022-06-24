@@ -16,7 +16,7 @@ const defaultMenu = {
 | ❖❯────【%week】────❮❖
 | Tanggal: *%week %weton, %date*
 | Tanggal Islam: *%dateIslamic*
-|*Waktu:* 
+| *Waktu:* 
 | %wib WIB
 | %wita WITA
 | %wit WIT
@@ -47,7 +47,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'all') tags = {
     'main': 'UTAMA',
     'game': 'Game',
-    'rpg': 'RPG',
+    'rpg': 'RPG', 
+    'anime': 'anime',
+    'nsfw': 'nsfw',
     'xp': 'Exp & Limit',
     'sticker': 'Stiker',
     'kerang': 'Kerang Ajaib',
@@ -115,6 +117,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'tools') tags = {
     'tools': 'Tools'
+  }
+  if (teks == 'anime') tags = {
+    'anime': 'anime'
   }
   if (teks == 'fun') tags = {
     'fun': 'Fun'
@@ -239,7 +244,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸waifu🐬', rowId: `${_p} waifu` },
           { title: '🌸daftar mods🐬', rowId: `${_p} mods1` },
           { title: '🌸Sewa bot🐬', rowId: `${_p} sewa` },
-          { title: '🌸Nsfw🐬', rowId: `${_p}? nsfw` },
+          { title: '🌸anime🐬', rowId: `${_p}? anime` },
         ]
       }
     ]
