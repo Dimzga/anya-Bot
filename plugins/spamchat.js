@@ -1,55 +1,12 @@
-let handler = async(m, { conn, text }) => {
-
-    if (!text) return conn.reply(m.chat, 'Masukan Teks yang akan dispam!', m)
-
-    let pesan = `${text}`
-    await m.reply('*SPAM DIMULAI!*\n\nNote : Bot akan spam 30 kali')
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-    await m.reply(pesan)
-
-    conn.reply(m.chat, 'Akhir Dari Spam', m)
+let fs = require('fs')
+let PhoneNumber = require('awesome-phonenumber')
+let handler = async (m) => {
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let stc = fs.readFileSync('./lib/audio.menu')
+conn.fakeReply(m.chat, stc, `${who.split`@`[0]}@s.whatsapp.net`, '*apa kak ?*', 'status@broadcast')
 }
-handler.help = ['spamchat'].map(v => v + ' <teks>')
-handler.tags = ['admin', 'grup']
-handler.command = /^(spamchat)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
 
-handler.admin = true
-handler.botAdmin = false
-
-handler.fail = null
-handler.exp = 100
-handler.limit = true
+handler.customPrefix = /menu|men|menuu|MENU|menuu|mennu/
+handler.command = new RegExp
 
 module.exports = handler
