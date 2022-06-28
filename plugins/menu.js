@@ -3,7 +3,6 @@ let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
-moment.tz('Asia/Jakarta')
 const defaultMenu = {
   before: `
  ❖❯────【%me】────❮❖
@@ -323,6 +322,7 @@ handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
+handler.register = true
 
 handler.admin = false
 handler.botAdmin = false
