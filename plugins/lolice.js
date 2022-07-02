@@ -1,13 +1,9 @@
-let handler = async (m, { conn }) => {
-  let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-  conn.sendFile(m.chat, global.API('https://some-random-api.ml', '/canvas/lolice', {
-    avatar: await conn.getProfilePicture(who).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'),
-  }), 'lolice.png', 'liuliuliuliuliu kami dengar disini ada lolicon', m)
+let handler = async(m,{text, conn}) => {
+let supa = 'https://api.lolhuman.xyz/api/sticker/gawrgura?apikey=7b389b5e346e7b9181783e80'
+conn.sendFile(m.chat, supa, null, 'Nih', m)
 }
-
-handler.help = ['lolice']
-handler.tags = ['maker', 'anime']
-
-handler.command = /^(lolice)$/i
+handler.help = ['anime']
+handler.tags = ['anime']
+handler.command = /^(gawrgura)$/i
 
 module.exports = handler
