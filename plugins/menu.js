@@ -41,7 +41,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes','anime', 'nsfw', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -229,6 +229,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸Internet🐬', rowId: `${_p}? internet` },
           { title: '🌸Anonymous🐬', rowId: `${_p}? anonymous` },
           { title: '🌸Nulis & Logo🐬', rowId: `${_p}? nulis` },
+          { title: '🌸Nsfw🐬', rowId: `${_p}? nsfw` },
           { title: '🌸Downloader🐬', rowId: `${_p}? downloader` },
           { title: '🌸Tools🐬', rowId: `${_p}? tools` },
           { title: '🌸Fun🐬', rowId: `${_p}? fun`},
