@@ -5,29 +5,23 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
- ❖❯────【%me】────❮❖
-| *%ucapan %name*
-|
-| Tersisa *%limit Limit*
-| Role *%role*
-| Level *%level (%exp / %maxexp)* [%xp4levelup]
-| %totalexp XP secara Total
-| ❖❯────【%week】────❮❖
-| Tanggal: *%week %weton, %date*
-| Tanggal Islam: *%dateIslamic*
-| *Waktu:* 
-| %wib WIB
-| %wita WITA
-| %wit WIT
-| *Hari:* %week
-| *Tanggal:* %date
-| *Uptime:* %uptime (%muptime)
-| ❖❯────【%muptime】────❮❖
-| Uptime: *%uptime (%muptime)*
-| Database: %rtotalreg dari %totalreg
-| Beta
-| Versi 3.5.1
-|---------------
+┌─〔 %me 〕
+├ *%ucapan %name*
+│
+├ Tersisa *%limit Limit*
+├ Role *%role*
+├ Level *%level (%exp / %maxexp)* [%xp4levelup]
+├ %totalexp XP secara Total
+│
+├ Tanggal: *%week %weton, %date*
+├ Tanggal Islam: *%dateIslamic*
+├ Waktu: *%time*
+│
+├ Uptime: *%uptime (%muptime)*
+├ Database: %rtotalreg dari %totalreg
+├ Github:
+├ %github
+└────
 %readmore`.trim(),
   header: '┌─〔 %category 〕',
   body: '├ %cmd %islimit %isPremium',
@@ -197,33 +191,28 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       {
         title: 'List Menu ' + namabot,
         rows: [
-          { title: '🌸Semua Perintah🐬', rowId: `${_p}? all` },
-          { title: '🌸Game🐬', rowId: `${_p}? game` },
-          { title: '🌸XP🐬', rowId: `${_p}? xp` },
-          { title: '🌸Stiker🐬', rowId: `${_p}? stiker` },
-          { title: '🌸Kerang Ajaib🐬', rowId: `${_p}? kerangajaib` },
-          { title: '🌸Quotes🐬', rowId: `${_p}? quotes` },
-          { title: '🌸Grup🐬', rowId: `${_p}? grup` },
-          { title: '🌸Premium🐬', rowId: `${_p}? premium` },
-          { title: '🌸Internet🐬', rowId: `${_p}? internet` },
-          { title: '🌸Anonymous🐬', rowId: `${_p}? anonymous` },
-          { title: '🌸Nulis & Logo🐬', rowId: `${_p}? nulis` },
-          { title: '🌸Nsfw🐬', rowId: `${_p}? nsfw` },
-          { title: '🌸Downloader🐬', rowId: `${_p}? downloader` },
-          { title: '🌸Tools🐬', rowId: `${_p}? tools` },
-          { title: '🌸Fun🐬', rowId: `${_p}? fun`},
-          { title: '🌸Database🐬', rowId: `${_p}? database` },
-          { title: '🌸Vote & Absen🐬', rowId: `${_p} beban` },
-          { title: "🌸Al-Qur\'an🐬", rowId: `${_p}? quran` },
-          { title: '🌸Pengubah Suara🐬', rowId: `${_p}? audio` },
-          { title: '🌸Jadi Bot🐬', rowId: `${_p}? jadibot` },
-          { title: '🌸Info🐬', rowId: `${_p}? info` },
-          { title: '🌸Tanpa Kategori🐬', rowId: `${_p}? tanpakategori` },
-          { title: '🌸Owner🐬', rowId: `${_p}? owner` },
-          { title: '🌸waifu🐬', rowId: `${_p} waifu` },
-          { title: '🌸daftar mods🐬', rowId: `${_p} mods1` },
-          { title: '🌸Sewa bot🐬', rowId: `${_p} sewa` },
-          { title: '🌸anime🐬', rowId: `${_p}? anime` },]
+          { title: 'Semua Perintah', rowId: `${_p}? all` },
+          { title: 'Game', rowId: `${_p}? game` },
+          { title: 'XP', rowId: `${_p}? xp` },
+          { title: 'Stiker', rowId: `${_p}? stiker` },
+          { title: 'Kerang Ajaib', rowId: `${_p}? kerangajaib` },
+          { title: 'Quotes', rowId: `${_p}? quotes` },
+          { title: 'Grup', rowId: `${_p}? grup` },
+          { title: 'Premium', rowId: `${_p}? premium` },
+          { title: 'Internet', rowId: `${_p}? internet` },
+          { title: 'Anonymous', rowId: `${_p}? anonymous` },
+          { title: 'Nulis & Logo', rowId: `${_p}? nulis` },
+          { title: 'Downloader', rowId: `${_p}? downloader` },
+          { title: 'Tools', rowId: `${_p}? tools` },
+          { title: 'Fun', rowId: `${_p}? fun`},
+          { title: 'Database', rowId: `${_p}? database` },
+          { title: 'Vote & Absen', rowId: `${_p}? vote` },
+          { title: "Al-Qur\'an", rowId: `${_p}? quran` },
+          { title: 'Pengubah Suara', rowId: `${_p}? audio` },
+          { title: 'Jadi Bot', rowId: `${_p}? jadibot` },
+          { title: 'Info', rowId: `${_p}? info` },
+          { title: 'Tanpa Kategori', rowId: `${_p}? tanpakategori` },
+          { title: 'Owner', rowId: `${_p}? owner` },
         ]
       }
     ]
@@ -231,8 +220,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       text: judul,
       footer: wm,
       mentions: await conn.parseMention(judul),
-      title: 'Halo kakak/abang',
-      buttonText: "nih menunya",
+      title: '',
+      buttonText: "Klik Disini",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
@@ -295,7 +284,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 }
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu)$/i
+handler.command = /^(m(enu)?|help|\?)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
