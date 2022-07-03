@@ -41,10 +41,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes','anime', 'nsfw', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all','hentai', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes','anime', 'nsfw', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
+    'hentai': 'Hentai',
     'game': 'Game',
     'rpg': 'RPG', 
     'anime': 'anime',
@@ -157,6 +158,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'sewa bot') tags = {
     '': 'sewa'
+  }
+  if (teks == 'Hentai') tags = {
+    '': 'hentai'
 }
 
   try {
@@ -244,7 +248,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸waifu🐬', rowId: `${_p} waifu` },
           { title: '🌸daftar mods🐬', rowId: `${_p} mods1` },
           { title: '🌸Sewa bot🐬', rowId: `${_p} sewa` },
-          { title: '🌸anime🐬', rowId: `${_p}? anime` },
+          { title: '🌸anime🐬', rowId: `${_p}? anime` },]
+          { title: '🌸Hentai🔞🐬', rowId: `${_p}? anime` },
         ]
       }
     ]
