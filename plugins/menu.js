@@ -157,6 +157,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'sewa bot') tags = {
     '': 'sewa'
+
 }
 
   try {
