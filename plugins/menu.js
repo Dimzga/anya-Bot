@@ -216,7 +216,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸Internet🐬', rowId: `${_p}? internet` },
           { title: '🌸Anonymous🐬', rowId: `${_p}? anonymous` },
           { title: '🌸Nulis & Logo🐬', rowId: `${_p}? nulis` },
-          { title: '🌸Nsfw🔞🐬', rowId: `${_p}? nsfw` },
+          { title: '🌸Nsfw🐬', rowId: `${_p}? nsfw` },
           { title: '🌸Downloader🐬', rowId: `${_p}? downloader` },
           { title: '🌸Tools🐬', rowId: `${_p}? tools` },
           { title: '🌸Fun🐬', rowId: `${_p}? fun`},
@@ -240,7 +240,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       footer: wm,
       mentions: await conn.parseMention(judul),
       title: 'Halo kakak/abang',
-      buttonText: "nih menunya😇",
+      buttonText: "nih menunya",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
