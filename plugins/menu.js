@@ -45,7 +45,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
-    'hentai': 'Hentai',
     'game': 'Game',
     'rpg': 'RPG', 
     'anime': 'anime',
