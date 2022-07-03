@@ -124,12 +124,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'jadibot') tags = {
     'jadibot': 'Jadi Bot'
   }
-  if (teks == 'nsfw') tags = {
-    'nsfw': 'nsfw'
-  }
-  if (teks == 'anime') tags = {
-    'anime': 'anime'
-  }
   if (teks == 'info') tags = {
     'info': 'Info'
   }
