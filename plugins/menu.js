@@ -35,7 +35,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner', 'anime', 'nsfw']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner', 'anime', 'nsfw', 'asupan']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -64,11 +64,15 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'jadibot': 'Jadi Bot',
     'info': 'Info',
     'waifu': 'waifu',
+    'asupan': 'asupan',
     '': 'Tanpa Kategori',
   }
   if (teks == 'game') tags = {
     'game': 'Game',
     'rpg': 'RPG'
+  }
+  if (teks == 'asupan') tags = {
+    'asupan': 'asupan'
   }
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
@@ -225,6 +229,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸Owner', rowId: `${_p}? owner` },
           { title: '🌸waifu', rowId: `${_p} waifu` },
           { title: '🌸anime', rowId: `${_p}? anime` },
+          { title: '🌸asupan', rowId: `${_p}? asupan` },
           { title: '🌸nsfw🔞', rowId: `${_p}? nsfw` },
         ]
       }
