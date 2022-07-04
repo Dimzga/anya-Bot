@@ -35,10 +35,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner', 'anime', 'nsfw', 'asupan']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner', 'anime', 'nsfw', 'asupan', 'maker']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
+    'maker': 'maker',
     'game': 'Game',
     'rpg': 'RPG', 
     'anime': 'Anime', 
@@ -73,6 +74,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'asupan') tags = {
     'asupan': 'asupan'
+  }
+  if (teks == 'maker') tags = {
+    'maker': 'maker'
   }
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
@@ -231,6 +235,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸anime', rowId: `${_p}? anime` },
           { title: '🌸asupan', rowId: `${_p}? asupan` },
           { title: '🌸nsfw🔞', rowId: `${_p}? nsfw` },
+          { title: '🌸Maker', rowId: `${_p}? maker` },
+          { title: '🌸Sewa bot', rowId: `${_p} sewa` },
+          { title: '🌸menu mods', rowId: `${_p} mods1` },
         ]
       }
     ]
