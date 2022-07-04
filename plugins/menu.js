@@ -57,6 +57,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
+    'anime': 'anime',
     'quran': 'Al Qur\'an',
     'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
