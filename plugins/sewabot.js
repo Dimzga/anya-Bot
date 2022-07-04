@@ -6,12 +6,12 @@ m.reply(`
    ❖❯────【Sewa】────❮❖
 │       *「 Sewa bot 」*
 │
-│•> .1. Grup / 30 Har*
-│•> .Rp. 15.000 Ovo
- | •> .Rp. 15.000 Pulsa
+│•> .1. Grup / 30 Hari
+│•> .Rp. 10.000 Ovo
+ | •> .Rp. 10.000 Pulsa
  | •> 2. GROUP + MODERATOR 30 Hari
- | •>Rp. 20.000 Ovo
- | •>Rp. 20.000 Pulsa
+ | •>Rp. 15.000 Ovo
+ | •>Rp. 15.000 Pulsa
  | •> https://wa.me/qr/7Y5SVWOXU7FZP1
  | •> chat owner : 083894556422
 ╰────
