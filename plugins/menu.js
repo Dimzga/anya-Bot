@@ -35,12 +35,13 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'anime, 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
     'game': 'Game',
-    'rpg': 'RPG',
+    'rpg': 'RPG', 
+    'anime': 'anime', 
     'xp': 'Exp & Limit',
     'sticker': 'Stiker',
     'kerang': 'Kerang Ajaib',
@@ -120,6 +121,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'info') tags = {
     'info': 'Info'
+  }
+  if (teks == 'anime') tags = {
+    'anime': 'anime'
   }
   if (teks == 'tanpakategori') tags = {
     '': 'Tanpa Kategori'
@@ -215,6 +219,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸Tanpa Kategori', rowId: `${_p}? tanpakategori` },
           { title: '🌸Owner', rowId: `${_p}? owner` },
           { title: '🌸waifu', rowId: `${_p} waifu` },
+          { title: '🌸anime', rowId: `${_p}? anjme` },
         ]
       }
     ]
@@ -278,7 +283,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let bg = await (await fetch('https://telegra.ph/file/ac2a9fe71410b774cc668.jpg')).buffer()
+    let bg = await (await fetch('https://telegra.ph/file/23a4ed2b8583c56484af8.jpg')).buffer()
     await conn.send3TemplateButtonImg(m.chat, bg, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}infobot`)
   } catch (e) {
     conn.reply(m.chat, 'Error by ganzzz', m)
