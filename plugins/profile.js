@@ -1,11 +1,10 @@
 let PhoneNumber = require('awesome-phonenumber')
 let handler = async (m, { conn }) => {
-  let pp = './src/avatar_contact.png'
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   try {
     pp = await conn.profilePictureUrl(who, 'image')
   } catch (e) {
-
+let pp = './src/avatar_contact.png'
   } finally {
     let { name, premium, level, limit, exp, lastclaim, registered, regTime, age } = global.DATABASE.data.users[m.sender]
     let username = conn.getName(who)
