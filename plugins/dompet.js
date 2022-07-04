@@ -2,12 +2,12 @@ let PhoneNumber = require('awesome-phonenumber')
 let levelling = require('../lib/levelling')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, usedPrefix }) => {
-  global.pp = 'https://i.ibb.co/gS0XrNc/avatar-contact.png'
   let prefix = usedPrefix
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   try {
-    pp = await conn.profilePictureUrl(who, 'image')
+    pp = await conn.profilePictureUrl(user, 'image')
   } catch (e) {
+    pp = 'https://i.ibb.co/gS0XrNc/avatar-contact.png'
 
   } finally {
     let { name, premium, premiumTime, atm, limit, warning, money, exp, lastclaim, registered, regTime, age, level, role } = global.db.data.users[who]
@@ -40,4 +40,3 @@ handler.tags = ['rpg']
 handler.command = /^(dompet|atm|pp|profile|profil|propil)$/i
 handler.register = false
 module.exports = handler
-
