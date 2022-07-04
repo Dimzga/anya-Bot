@@ -220,7 +220,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸Tanpa Kategori', rowId: `${_p}? tanpakategori` },
           { title: '🌸Owner', rowId: `${_p}? owner` },
           { title: '🌸waifu', rowId: `${_p} waifu` },
-          { title: '🌸anime', rowId: `${_p}? anjme` },
+          { title: '🌸anime', rowId: `${_p}? anime` },
         ]
       }
     ]
