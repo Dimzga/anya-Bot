@@ -3,7 +3,7 @@ let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 let handler = async (m, { conn, text }) => {
     let [_, code] = text.match(linkRegex) || []
     if (!code) throw 'Link invalid'
-    let { gid: target } = await conn.acceptInvite(code)
+    let { gid: target } = await conn.groupAcceptInvite(code)
     let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
 await conn.relayWAMessage(global.mm=conn.
 prepareMessageFromContent(target, conn.
