@@ -238,7 +238,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸Maker', rowId: `${_p}? maker` },
           { title: '🌸Sewa bot', rowId: `${_p} sewa` },
           { title: '🌸menu mods', rowId: `${_p} mods1` },
-          { title: '🌸Menu absen', rowId: `${_p}? beban` },
+          { title: '🌸Menu absen', rowId: `${_p} beban` },
         ]
       }
     ]
@@ -319,6 +319,7 @@ handler.group = false
 handler.private = false
 
 handler.admin = false
+handler.register = true
 handler.botAdmin = false
 
 handler.fail = null
