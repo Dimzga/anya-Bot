@@ -9,7 +9,6 @@ let handler = async (m, { conn }) => {
   } catch (e) {
 
   } finally {
-    let about = (await conn.getStatus(who).catch(console.error) || {}).status || ''
     let { name, tigame, user, level, role, money, premium, limit, exp, lastclaim, registered, regTime, age } = global.db.data.users[m.sender]
     let username = conn.getName(who)
     let str = `
