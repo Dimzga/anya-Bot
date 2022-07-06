@@ -1,59 +1,17 @@
-let limit = 80
-let fetch = require('node-fetch')
-let { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper');
-let handler = async (m, { conn, args, isPrems, isOwner }) => {
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
-
-  const isY = /y(es)/gi.test(args[1])
-  const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
-  const limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
-  let audio, source, res, link, lastError, isLimit
-  for (let i in _audio) {
-    try {
-      audio = _audio[i]
-      isLimit = limitedSize < audio.fileSize
-      if (isLimit) continue
-      link = await audio.download()
-      if (link) res = await fetch(link)
-      isLimit = res?.headers.get('content-length') && parseInt(res.headers.get('content-length')) < limitedSize
-      if (isLimit) continue
-      if (res) source = await res.arrayBuffer()
-      if (source instanceof ArrayBuffer) break
-    } catch (e) {
-      audio = link = source = null
-      lastError = e
-    }
-  }
-  if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw 'Error: ' + (lastError || 'Can\'t download audio')
-  if (!isY && !isLimit) await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
-*${htki} YOUTUBE ${htka}*
-
-*${htjava} Title:* ${title}
-*${htjava} Type:* mp3
-*${htjava} Filesize:* ${audio.fileSizeH}
-
-*L O A D I N G. . .*
-`.trim(), m)
-  if (!isLimit) await conn.sendFile(m.chat, source, title + '.mp3', `
-*${htki} YOUTUBE ${htka}*
-
-*${htjava} Title:* ${title}
-*${htjava} Type:* mp3
-*${htjava} Filesize:* ${audio.fileSizeH}
-
-*L O A D I N G. . .*
-`.trim(), m, null, {
-    asDocument: chat.useDocument
-  })
+let { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys')
+let limit = 50
+const { servers, yta } = require('../lib/y2mate')
+let handler = async(m, { conn, args, isPrems, isOwner }) => {
+    if (!args || !args[0]) return conn.reply(m.chat, 'Uhm... urlnya mana?', m)
+    let chat = global.db.data.chats[m.chat]
+    let server = (args[1] || servers[0]).toLowerCase()
+    let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
+    let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
+    m.reply(wait)
+    if (!isLimit) await conn.sendMessage(m.chat, { document: { url: dl_link}, mimetype: 'audio/mpeg', fileName: `${title}.mp3`}, {quoted: m})
 }
-handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> <without message>`)
+handler.help = ['ytmp3 <query>']
 handler.tags = ['downloader']
-handler.command = /^yt(a|mp3)$/i
-
-handler.exp = 0
-handler.register = true
+handler.command = /^yt(a(udio)?|mp3|musik|lagu)$/i
 handler.limit = true
-
 module.exports = handler
-
-/*export default handler*/
