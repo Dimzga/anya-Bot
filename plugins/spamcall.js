@@ -1,20 +1,41 @@
-let axios = require("axios");
-let handler = async(m, { conn, text }) => {
+import fs from 'fs'
+import fetch from 'node-fetch'
 
-    if (!text) return conn.reply(m.chat, 'Silahkan masukan Nomor Telpon untuk di SpamCall!\n\nMisal : !spamcall 1234567890', m)
+let handler = async(m, { conn, text, usedPrefix: _p }) => {
+let [number, pesan, boddy] = text.split `|`
 
-	axios.get(`https://tobz-api.herokuapp.com/api/spamcall?no=${text}&apikey=BotWeA`).then ((res) => {
-	 	let hasil = `${res.data.logs}`
+let td = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 
-    conn.reply(m.chat, hasil, m)
-	})
-}
-handler.help = ['spamcall'].map(v => v + ' <no hp>')
-handler.tags = ['premium']
-handler.command = /^(spamcall)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = true
+    if (!number) return conn.reply(m.chat, 'Silahkan masukan id grup yang akan dikirim', m)
+    if (!pesan) return conn.reply(m.chat, 'Silahkan masukan pesannya', m)
+    if (text > 500) return conn.reply(m.chat, 'Teks Kepanjangan!', m)
+    
+    let user = global.db.data.users[m.sender]
+
+    let korban = `${number}`
+    var nomor = m.sender
+    let spam1 = `「 *KANNA* 」\n\nDari : Owner\nKe : ${korban}@g.us\nPesan : ${pesan}\n\n${global.wm}`
+
+    await conn.reply(korban + '@g.us', spam1, 0, {
+    contextInfo: { mentionedJid: [m.sender],
+    externalAdReply :{
+    mediaUrl: '',
+    mediaType: 2,
+    title: global.wm, 
+    body: 'Hai,Ini Balasan Pesan Dari Owner',  
+    sourceUrl: sgc, 
+    thumbnail: fs.readFileSync('./thumbnail.jpg')
+      }}
+     })    
+
+{
+
+    let logs = `[!] Berhasil mengirim pesan wa ke id grup ${korban}`
+    conn.reply(m.chat, logs, m)
+}}
+handler.command = /^(gcpesan|gcbalas)$/i
+handler.owner = true
+handler.premium = false
 handler.group = false
 handler.private = false
 
@@ -22,7 +43,6 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.exp = 0
-handler.limit = true
+handler.limit = false
 
-module.exports = handler
+export default handler
