@@ -82,6 +82,8 @@ handler.help = ['judi [jumlah]']
 handler.tags = ['rpg']
 handler.command = /^(judi|bet)$/i
 
+module.exports = handler
+
 /**
  * Detect if thats number
  * @param {Number} x 
