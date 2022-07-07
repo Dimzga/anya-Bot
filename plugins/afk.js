@@ -1,6 +1,7 @@
 let handler = async(m, { conn, usedPrefix, text }) => {
     let user = global.db.data.users[m.sender]
-const bg = "https://telegra.ph/file/ab409a63288077fb8c52c.jpg"
+let bg = await (await fetch('https://telegra.ph/file/46a2634596ce1a9e78d8c.mp4')).buffer()
+    await conn.send3ButtonVid(m.chat, bg, text.trim(),"
     user.afk = + new Date
     user.afkReason = text
     conn.sendButton(m.chat, `
