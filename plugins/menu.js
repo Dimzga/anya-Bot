@@ -302,7 +302,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let bg = await (await fetch('https://telegra.ph/file/46a2634596ce1a9e78d8c.mp4')).buffer()
+    let bg = await (await fetch('https://telegra.ph/file/3d912c9ed4c87e6f7c7ac.mp4')).buffer()
     await conn.send3ButtonVid(m.chat, bg, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}infobot`)
   } catch (e) {
     conn.reply(m.chat, 'Error by ganzzz', m)
