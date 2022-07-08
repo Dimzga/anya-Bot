@@ -5,7 +5,7 @@ let handler = async (m, { conn, text }) => {
     for (let id of groups) {
         let bg = 'https://telegra.ph/file/45666021799f055a56a28.jpg'
         await conn.delay(1500)
-        await conn.sendButtonLoc(id, await (await fetch(bg)).buffer(), text, wm, 'broadcast', 'broadcast')
+        await conn.sendButtonLoc(id, await (await fetch(bg)).buffer(), text, wm, '\n AKU PEDO DAN AKU BANGGA 😎', 'ok')
     }
     m.reply('*selesai*')
 }
