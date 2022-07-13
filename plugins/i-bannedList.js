@@ -1,3 +1,4 @@
+const fs = require('fs')
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 let handler = async (m, { jid, conn, usedPrefix, command, isOwner }) => {
@@ -19,7 +20,17 @@ let fetch = require('node-fetch')
 `.trim()).join('\n') : ''}
 ╰────
 `.trim()
-    conn.sendButtonLoc(m.chat, await(await fetch(fla + `${command}`)).buffer(), caption, wm, `Menu`, `${usedPrefix}menu`, m, { contextInfo: { mentionedJid: conn.parseMention(caption) }, mentions: await conn.parseMention(caption) })
+    conn.sendMessage(m.chat, { 
+contextInfo: { mentionedJid: conn.parseMention(caption),
+mentions: await conn.parseMention(caption)
+}, 
+location: { jpegThumbnail: fs.readFileSync('./src/waifu.jpg')},
+caption: caption,
+buttons: [{
+buttonId: `${usedPrefix}menu`,
+buttonText: { displayText: `MENU`}
+}],
+footer: wm })
 }
 handler.help = ['bannedlist']
 handler.tags = ['info']
