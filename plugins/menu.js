@@ -2,7 +2,7 @@ let levelling = require('../lib/levelling')
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
-let moment = require('moment-timezone')
+let moment = require('moment-timezone') moment.tz('Asia/Jakarta').format('HH')
 const defaultMenu = {
   before: `
  ❖❯────【%me】────❮❖
@@ -246,7 +246,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       text: judul,
       footer: wm,
       mentions: await conn.parseMention(judul),
-      title: '',
+      title: '*『 Dimz ʙᴏᴛᴢ 』* , ʜᴀɪ,ᴀᴋᴜ ᴀᴅᴀʟᴀʜ ʙᴏᴛ ʏᴀɴɢ ᴅɪʙᴇʀɪ ɴᴀᴍᴀ Dimz ʙᴏᴛᴢ,ᴀᴋᴜ ᴅɪ ᴋᴇᴍʙᴀɴɢᴋᴀɴ ᴏʟᴇʜ ꜱᴇꜱᴇᴏʀᴀɴɢ ʏᴀɴɢ ʙᴇʀɴᴀᴍᴀ Bang dimz,ʙᴇʟɪᴀᴜ ᴍᴀꜱɪʜ ᴘᴇᴍᴜʟᴀ ᴅᴀɴ ᴍᴀꜱɪʜ ʙᴇʟᴀᴊᴀʀ ʙᴀɴʏᴀᴋ ʜᴀʟ,ᴅᴀɴ ᴛᴜᴊᴜᴀɴɴʏᴀ ʜᴀɴʏᴀ ɪɴɢɪɴ ᴛᴀᴜ ᴀᴘᴀ ʏᴀɴɢ ɪɴɢɪɴ ᴅɪᴋᴇᴛᴀʜᴜɪ ᴅɪ ᴅᴜɴɪᴀ ʙᴏᴛ,ꜱɪʟᴀʜᴋᴀɴ ᴋᴇᴛɪᴋ ᴛᴏᴍʙᴏʟ ᴍᴇɴᴜ ᴜɴᴛᴜᴋ ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ᴍᴇɴᴜ',
       buttonText: "Nih menunya kak😚",
       sections
     }
