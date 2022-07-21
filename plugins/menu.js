@@ -2,7 +2,7 @@ let levelling = require('../lib/levelling')
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
-let moment = require('moment-timezone') moment.tz('Asia/Jakarta').format('HH')
+let moment = require('moment-timezone')('Asia/Jakarta').format('HH')
 const defaultMenu = {
   before: `
  ❖❯────【%me】────❮❖
