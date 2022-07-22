@@ -1,31 +1,21 @@
-const fs = require('fs')
-const { exec } = require('child_process')
+const { WAProto } = require('@adiwajshing/baileys')
 
-let handler = async (m, { conn, usedPrefix, command }) => {
-    try {
-        let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
-        let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
-        if (/audio/.test(mime)) {
-            let media = await conn.downloadAndSaveMediaMessage(q)
-            let ran = getRandom('.mp3')
-            exec(`ffmpeg -i ${media} -filter:v "minterpolate='mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120'"  ${ran}`, (err, stderr, stdout) => {
-                fs.unlinkSync(media)
-                if (err) throw `_*Error!*_`
-                let buff = fs.readFileSync(ran)
-                conn.sendFile(m.chat, buff, ran, null, m, true, { quoted: m, mimetype: 'audio/mp4' })
-                fs.unlinkSync(ran)
-            })
-        } else throw `Balas vn/audio yang ingin diubah dengan caption *${usedPrefix + command}*`
-    } catch (e) {
-        throw e
-    }
+let handler = async (m, { conn, command, usedPrefix, text }) => {
+    let M = WAProto.WebMessageInfo
+    let which = command.replace(/add/i, '')
+    if (!m.quoted) throw `Balas pesan dengan perintah *${usedPrefix + command}*`
+    if (!text) throw `Pengunaan:${usedPrefix + command} <teks>\n\nContoh:\n${usedPrefix + command} tes`
+    let msgs = db.data.msgs
+    if (text in msgs) throw `'${text}' telah terdaftar!`
+    msgs[text] = M.fromObject(await m.getQuotedObj()).toJSON()
+    if (db.data.chats[m.chat].getmsg) return m.reply(`Berhasil menambahkan pesan '${text}'
+    
+Akses dengan mengetik namanya`.trim())
+    else return await conn.sendButton(m.chat, `Berhasil menambahkan pesan '${text}'
+    
+akses dengan ${usedPrefix}get${which} ${text}`, wm, 'Aktifkan', '.on getmsg', m)
 }
-handler.help = ['smooth']
-handler.tags = ['audio']
-handler.command = /^(smooth)$/i
-
+handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'stiker', 'gif'].map(v => 'add' + v + ' <teks>')
+handler.tags = ['database']
+handler.command = /^add(vn|msg|video|audio|img|stic?ker|gif)$/
 module.exports = handler
-
-const getRandom = (ext) => {
-    return `${Math.floor(Math.random() * 10000)}${ext}`
-}
