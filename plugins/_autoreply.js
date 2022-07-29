@@ -42,13 +42,10 @@ handler.all = async function (m) {
     if (/^.meni$/i.test(m.text)) {
         await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : 'typo ya kak?', wm, !(m.isGroup || m.isPrems) && group ? 'menu' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : 'menu', !(m.isGroup || m.isPrems) && group ? '.menu1' : isBanned ? '.unban' : banned ? '.owner' : '.menu1', m)
     }
-    if (/^.menu$/i.test(m.text)) {
-        await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : '*mau menu ya kak? download data dulu yuk atau daftar dulu*', wm, !(m.isGroup || m.isPrems) && group ? 'donasi' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : 'Menunya', !(m.isGroup || m.isPrems) && group ? '.menu1' : isBanned ? '.unban' : banned ? '.owner' : '.menu1', m)
-    }
     if (/^ajg$/i.test(m.text)) {
         await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : 'Jangan toxic kakak', wm, !(m.isGroup || m.isPrems) && group ? 'Mau di ban?' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : '.donasi', !(m.isGroup || m.isPrems) && group ? '.donasi' : isBanned ? '.unban' : banned ? '.owner' : '.menu1', m)
     }
-    if (/^Ajg$/i.test(m.text)) {
+    if (/^anj$/i.test(m.text)) {
         await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : 'Jangan toxic kakak', wm, !(m.isGroup || m.isPrems) && group ? 'Mau di ban?' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : '.donasi', !(m.isGroup || m.isPrems) && group ? '.donasi' : isBanned ? '.unban' : banned ? '.owner' : '.menu1', m)
     }
     // backup db
