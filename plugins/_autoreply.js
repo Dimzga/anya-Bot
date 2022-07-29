@@ -24,7 +24,7 @@ handler.all = async function (m) {
     if ((m.mtype === 'groupInviteMessage' || m.text.startsWith('https://chat') || m.text.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
         this.sendButton(m.chat, `┌「 *Undang Bot ke Grup* 」
 ├ Free
-├ free
+├ izin dulu ajg
 └────
 `.trim(), wm, 'Pemilik Bot', '.owner', m)
     }
@@ -32,15 +32,25 @@ handler.all = async function (m) {
     if (m.isGroup) {
     if (m.fromMe) return
     if (m.mentionedJid.includes(this.user.jid) && m.isGroup) {
-    	await this.send2Button(m.chat, m.msg.contextInfo.expiration == 604800 ? '\n\nketik *.ephe* untuk matiin pesan sementaranya, biar tombolnya bisa dipake' : 'uhm.. iya ada apa?', wm, `${isBanned ? 'UNBAN' : 'MENU'}`, `${isBanned ? '.unban' : '.?'}`, `${!m.isGroup ? 'DONASI' : isBanned ? 'UNBAN' : 'BAN'}`, `${!m.isGroup ? '.donasi' : isBanned ? '.unban' : '.ban'}`, m)
+    	await this.send2Button(m.chat, m.msg.contextInfo.expiration == 604800 ? '\n\nketik *.ephe* untuk matiin pesan sementaranya, biar tombolnya bisa dipake' : 'uhm.. iya ada apa Gura capek ಥ‿ಥ', wm, `${isBanned ? 'UNBAN' : 'MENU'}`, `${isBanned ? '.unban' : '.?'}`, `${!m.isGroup ? 'DONASI' : isBanned ? 'UNBAN' : 'BAN'}`, `${!m.isGroup ? '.donasi' : isBanned ? '.unban' : '.ban'}`, m)
     }
 }
     
     if (/^bot$/i.test(m.text)) {
         await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : 'aktif', wm, !(m.isGroup || m.isPrems) && group ? 'donasi' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : 'donasi', !(m.isGroup || m.isPrems) && group ? '.donasi' : isBanned ? '.unban' : banned ? '.owner' : '.donasi', m)
     }
-
-
+    if (/^.meni$/i.test(m.text)) {
+        await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : 'typo ya kak?', wm, !(m.isGroup || m.isPrems) && group ? 'menu' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : 'menu', !(m.isGroup || m.isPrems) && group ? '.menu1' : isBanned ? '.unban' : banned ? '.owner' : '.menu1', m)
+    }
+    if (/^.menu$/i.test(m.text)) {
+        await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : '*mau menu ya kak? download data dulu yuk atau daftar dulu*', wm, !(m.isGroup || m.isPrems) && group ? 'donasi' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : 'Menunya', !(m.isGroup || m.isPrems) && group ? '.menu1' : isBanned ? '.unban' : banned ? '.owner' : '.menu1', m)
+    }
+    if (/^ajg$/i.test(m.text)) {
+        await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : 'Jangan toxic kakak', wm, !(m.isGroup || m.isPrems) && group ? 'Mau di ban?' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : '.donasi', !(m.isGroup || m.isPrems) && group ? '.donasi' : isBanned ? '.unban' : banned ? '.owner' : '.menu1', m)
+    }
+    if (/^Ajg$/i.test(m.text)) {
+        await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : 'Jangan toxic kakak', wm, !(m.isGroup || m.isPrems) && group ? 'Mau di ban?' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : '.donasi', !(m.isGroup || m.isPrems) && group ? '.donasi' : isBanned ? '.unban' : banned ? '.owner' : '.menu1', m)
+    }
     // backup db
     if (setting.backup) {
         if (new Date() * 1 - setting.backupDB > 1000 * 60 * 60) {
