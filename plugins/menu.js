@@ -20,7 +20,7 @@ const defaultMenu = {
 | Uptime: *%uptime (%muptime)*
 | Database: %rtotalreg dari %totalreg
 | Beta
-| Versi 1.5.3
+| Versi *MAX*
 |---------------
 %readmore`.trim(),
   header: '┌─〔 %category 〕',
@@ -209,36 +209,36 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       {
         title: 'List Menu ' + namabot,
         rows: [
-          { title: '🌸Semua Perintah', rowId: `${_p}? all` },
-          { title: '🌸Game', rowId: `${_p}? game` },
-          { title: '🌸XP', rowId: `${_p}? xp` },
-          { title: '🌸Stiker', rowId: `${_p}? stiker` },
-          { title: '🌸Kerang Ajaib', rowId: `${_p}? kerangajaib` },
-          { title: '🌸Quotes', rowId: `${_p}? quotes` },
-          { title: '🌸Grup', rowId: `${_p}? grup` },
-          { title: '🌸Premium', rowId: `${_p}? premium` },
-          { title: '🌸Internet', rowId: `${_p}? internet` },
-          { title: '🌸Anonymous', rowId: `${_p}? anonymous` },
-          { title: '🌸Nulis & Logo', rowId: `${_p}? nulis` },
-          { title: '🌸Downloader', rowId: `${_p}? downloader` },
+          { title: '🌸Semua Perintah🐬', rowId: `${_p}? all` },
+          { title: '🌸Game🐬', rowId: `${_p}? game` },
+          { title: '🌸XP🐬', rowId: `${_p}? xp` },
+          { title: '🌸Stiker🐬', rowId: `${_p}? stiker` },
+          { title: '🌸Kerang Ajaib🐬', rowId: `${_p}? kerangajaib` },
+          { title: '🌸Quotes🐬', rowId: `${_p}? quotes` },
+          { title: '🌸Grup🐬', rowId: `${_p}? grup` },
+          { title: '🌸Premium🐬', rowId: `${_p}? premium` },
+          { title: '🌸Internet🐬', rowId: `${_p}? internet` },
+          { title: '🌸Anonymous🐬', rowId: `${_p}? anonymous` },
+          { title: '🌸Nulis & Logo🐬', rowId: `${_p}? nulis` },
+          { title: '🌸Downloader🐬', rowId: `${_p}? downloader` },
           { title: '🌸Tools', rowId: `${_p}? tools` },
-          { title: '🌸Fun', rowId: `${_p}? fun`},
-          { title: '🌸Database', rowId: `${_p}? database` },
-          { title: '🌸Vote & Absen', rowId: `${_p} beban` },
+          { title: '🌸Fun🐬', rowId: `${_p}? fun`},
+          { title: '🌸Database🐬', rowId: `${_p}? database` },
+          { title: '🌸Vote & Absen🐬', rowId: `${_p} beban` },
           { title: "🌸Al-Qur\'an", rowId: `${_p}? quran` },
-          { title: '🌸Pengubah Suara', rowId: `${_p}? audio` },
-          { title: '🌸Jadi Bot', rowId: `${_p}? jadibot` },
-          { title: '🌸Info', rowId: `${_p}? info` },
+          { title: '🌸Pengubah Suara🐬', rowId: `${_p}? audio` },
+          { title: '🌸Jadi Bot🐬', rowId: `${_p}? jadibot` },
+          { title: '🌸Info🐬', rowId: `${_p}? info` },
           { title: '🌸Tanpa Kategori', rowId: `${_p}? tanpakategori` },
-          { title: '🌸Owner', rowId: `${_p}? owner` },
-          { title: '🌸waifu', rowId: `${_p} waifu` },
-          { title: '🌸anime', rowId: `${_p}? anime` },
-          { title: '🌸asupan', rowId: `${_p}? asupan` },
+          { title: '🌸Owner🐬', rowId: `${_p}? owner` },
+          { title: '🌸waifu🐬', rowId: `${_p} waifu` },
+          { title: '🌸anime🐬', rowId: `${_p}? anime` },
+          { title: '🌸asupan🐬', rowId: `${_p}? asupan` },
           { title: '🌸nsfw🔞', rowId: `${_p}? nsfw` },
-          { title: '🌸Maker', rowId: `${_p}? maker` },
-          { title: '🌸Sewa bot', rowId: `${_p} sewa` },
-          { title: '🌸menu mods', rowId: `${_p} mods1` },
-          { title: '🌸Menu absen', rowId: `${_p} beban` },
+          { title: '🌸Maker🐬', rowId: `${_p}? maker` },
+          { title: '🌸Sewa bot🐬', rowId: `${_p} sewa` },
+          { title: '🌸menu mods🐬', rowId: `${_p} mods1` },
+          { title: '🌸Menu absen🐬', rowId: `${_p} beban` },
         ]
       }
     ]
@@ -247,7 +247,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       footer: wm,
       mentions: await conn.parseMention(judul),
       title: '*『 Dimz ʙᴏᴛᴢ 』* , ʜᴀɪ,ᴀᴋᴜ ᴀᴅᴀʟᴀʜ ʙᴏᴛ ʏᴀɴɢ ᴅɪʙᴇʀɪ ɴᴀᴍᴀ Dimz ʙᴏᴛᴢ,ᴀᴋᴜ ᴅɪ ᴋᴇᴍʙᴀɴɢᴋᴀɴ ᴏʟᴇʜ ꜱᴇꜱᴇᴏʀᴀɴɢ ʏᴀɴɢ ʙᴇʀɴᴀᴍᴀ Bang dimz,ʙᴇʟɪᴀᴜ ᴍᴀꜱɪʜ ᴘᴇᴍᴜʟᴀ ᴅᴀɴ ᴍᴀꜱɪʜ ʙᴇʟᴀᴊᴀʀ ʙᴀɴʏᴀᴋ ʜᴀʟ,ᴅᴀɴ ᴛᴜᴊᴜᴀɴɴʏᴀ ʜᴀɴʏᴀ ɪɴɢɪɴ ᴛᴀᴜ ᴀᴘᴀ ʏᴀɴɢ ɪɴɢɪɴ ᴅɪᴋᴇᴛᴀʜᴜɪ ᴅɪ ᴅᴜɴɪᴀ ʙᴏᴛ,ꜱɪʟᴀʜᴋᴀɴ ᴋᴇᴛɪᴋ ᴛᴏᴍʙᴏʟ ᴍᴇɴᴜ ᴜɴᴛᴜᴋ ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ᴍᴇɴᴜ',
-      buttonText: "Nih menunya kak😚",
+      buttonText: "Nih menunya🐬",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
