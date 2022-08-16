@@ -5,7 +5,7 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')('Asia/Jakarta').format('HH')
 const defaultMenu = {
   before: `
- ❖❯────【%me】────❮❖
+ ❖❯────【SENA BOT】────❮❖
 | *%ucapan %name*
 |
 | Tersisa *%limit Limit*
@@ -302,7 +302,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let bg = await (await fetch('https://telegra.ph/file/3d912c9ed4c87e6f7c7ac.mp4')).buffer()
+    let bg = await (await fetch('https://telegra.ph/file/62d5a39cced46b63fa7e0.mp4')).buffer()
     await conn.send3ButtonVid(m.chat, bg, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `\n AKU PEDO DAN AKU BANGGA`, `${_p}infobot`)
   } catch (e) {
     conn.reply(m.chat, 'Error by ganzzz', m)
