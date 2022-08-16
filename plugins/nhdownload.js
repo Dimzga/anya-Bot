@@ -1,31 +1,40 @@
-let { get } = require('axios')
-let handler = async (m, { conn, args }) => {
-   if (!args[0]) throw 'Masukkan kode sebagai parameter. Berikut: #nh 304307'
-  m.reply(global.wait)
-let lol = global.API('lolhum', `/api/nhentaipdf/${args[0]}`, {}, 'apikey')
-  let { result } = (await get(lol)).data
-  if (result.includes('HTML')) throw `Code ${args[0]} Not Found!`
-   conn.sendMessage(m.chat, await getBuffer(result), 'documentMessage', { quoted: m, filename: `${args[0]}.pdf`, mimetype: 'application/pdf' })
+let { generateWAMessageFromContent } = require('@adiwajshing/baileys')
+let handler = async (m, { conn, text, participants }) => {
+  let users = participants.map(u => u.id)
+  let q = m.quoted ? m.quoted : m
+  let c = m.quoted ? m.quoted : m.msg
+  let msg = await conn.cMod(
+    m.chat,
+    await generateWAMessageFromContent(
+      m.chat,
+      {
+        [c.toJSON ? q.mtype : 'extendedTextMessage']: c.toJSON ? c.toJSON() : {
+          text: await c || ''
+        },
+        mentions: await users
+      }, {
+        quoted: null,
+        userJid: conn.user.id
+      }
+    ),
+    text || q.text, conn.user.jid,
+    {
+      mentions: await users
+    }
+  )
+  await conn.relayMessage(m.chat, msg.message, {
+    messageId: msg.key.id
+  })
 }
+handler.help = ['hidetag', 'pengumuman'].map(v => v + ' [teks]')
+handler.tags = ['owner']
+handler.command = /^(otag)$/i
 
-handler.help = ['nhpdf'].map(v => v + ' <code>')
-
-handler.tags = ['nsfw']
-handler.command = /^(nhpdf|nhd)$/i
-handler.nsfw = true
-
-handler.limit = 1
+handler.group = true
+handler.admin = false
+handler.limit = false
+handler.rowner = true
 
 module.exports = handler
 
-
-
-async function getBuffer(url) {
-
-k = await require('node-fetch')(url)
-
-a = await k.buffer()
-
-return a 
-
-}
+// Aguz Familia
