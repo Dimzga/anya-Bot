@@ -20,7 +20,7 @@ caption: `
 
 `})
 }
-handler.command = /^(2)$/i
+handler.command = /^(sewa)$/i
 handler.mods = false
 handler.owner = false
 
