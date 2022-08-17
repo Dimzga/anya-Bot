@@ -1,31 +1,22 @@
-const fs = require('fs')
-const { exec } = require('child_process')
+let handler = async m => {
+const bg = "https://telegra.ph/file/64295f11b9528f8caaf4b.mp4"
 
-let handler = async (m, { conn, usedPrefix, command }) => {
-    try {
-        let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
-        let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
-        if (/audio/.test(mime)) {
-            let media = await conn.downloadAndSaveMediaMessage(q)
-            let ran = getRandom('.mp3')
-            exec(`ffmpeg -i ${media} -filter:a atempo=1.06,asetrate=44100*1.25 ${ran}`, (err, stderr, stdout) => {
-                fs.unlinkSync(media)
-                if (err) throw `_*Error!*_`
-                let buff = fs.readFileSync(ran)
-                conn.sendFile(m.chat, buff, ran, null, m, true, { quoted: m, mimetype: 'audio/mp4' })
-                fs.unlinkSync(ran)
-            })
-        } else throw `Balas vn/audio yang ingin diubah dengan caption *${usedPrefix + command}*`
-    } catch (e) {
-        throw e
-    }
+
+conn.sendMessage(m.chat, {
+video: { url: bg },
+caption: `
+   ❖❯────【Rules】────❮❖
+
+1. *JANGAN SPAM HIDETAG GK GUNA KALO UDH LEWAT 5 KALI[BANNED]*
+2. *JANGAN SPAM BOT*
+3. *HARGAI OWNER*
+4. *JANGAN NGEJEK LAH AJG*
+5. *DILARANG TELPON BOT*
+6. *KALO MO INVIT BOT IZIN DULU*
+`})
 }
-handler.help = ['nightcore']
-handler.tags = ['audio']
-handler.command = /^(nightcore)$/i
+handler.command = /^(rules)$/i
+handler.mods = false
+handler.owner = false
 
 module.exports = handler
-
-const getRandom = (ext) => {
-    return `${Math.floor(Math.random() * 10000)}${ext}`
-}
