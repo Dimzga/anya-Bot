@@ -1,8 +1,10 @@
 let handler = async m => {
-const bg = "https://telegra.ph/file/6c943fc155456e5cc30de.jpg"
+const bg = "https://telegra.ph/file/64295f11b9528f8caaf4b.mp4"
 
-let krtu = `Kartu Intro`
-m.reply(`
+
+conn.sendMessage(m.chat, {
+video: { url: bg },
+caption: `
    ❖❯────【Sewa】────❮❖
 │       *「 Sewa bot 」*
 │
@@ -16,9 +18,9 @@ m.reply(`
  | •> chat owner : 083894556422
 ╰────
 
-`.trim()) // Tambah sendiri kalo mau
+`})
 }
-handler.command = /^(sewa)$/i
+handler.command = /^(2)$/i
 handler.mods = false
 handler.owner = false
 
