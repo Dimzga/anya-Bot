@@ -13,8 +13,11 @@ caption: `
 4. *JANGAN NGEJEK LAH AJG*
 5. *DILARANG TELPON BOT*
 6. *KALO MO INVIT BOT IZIN DULU*
+*Sekian Terima kasih*
 `})
 }
+handler.tags = ["info"]
+handler.help = ["rules"]
 handler.command = /^(rules)$/i
 handler.mods = false
 handler.owner = false
