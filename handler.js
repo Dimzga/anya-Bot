@@ -687,7 +687,7 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = async (type, m, conn) => {
     let msg = {
-        rowner: `Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
+        rowner: `MAAF MENU INI SEDANG DALAM PERBAIKAN📛 _*Team Bot Discussion!1!1!*_`,
         owner: `Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
         mods: `Perintah ini hanya dapat digunakan oleh *Moderator*`,
         premium: 'Perintah ini hanya untuk member _*Premium*_ !',
