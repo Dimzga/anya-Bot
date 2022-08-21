@@ -9,6 +9,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 *Description:* ${description}
 `.trim(), m)
 }
+handler.rowner = true 
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
