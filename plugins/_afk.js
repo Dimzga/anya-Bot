@@ -1,9 +1,7 @@
-const bg = "https://telegra.ph/file/fa49906a26ec5ffd2633e.mp4"
 let handler = m => m
 handler.before = function (m) {
     let user = global.db.data.users[m.sender]
     if (user.afk > -1) {
-        this.sendButtonVid(m.chat, bg, `
 Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
 Selama ${this.clockString(new Date - user.afk)}
 `.trim(), wm, `Menu`, `.menu`, m)
