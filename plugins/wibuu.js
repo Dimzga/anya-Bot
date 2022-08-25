@@ -1,9 +1,9 @@
-let fs = require('fs')
-let PhoneNumber = require('awesome-phonenumber')
-let handler = async (m) => {
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let stc = fs.readFileSync('./lib/wibu.webp')
-conn.fakeReply(m.chat, stc, `${who.split`@`[0]}@s.whatsapp.net`, '*Lari Cuk Ada Wibu !*', 'status@broadcast')
+const { sticker } = require('../lib/sticker')
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+
+let thumb = "https://telegra.ph/file/66ee3fc79c0914b47598f.png"
+let stiker = await sticker(null, thumb, global.wm, global.author)
+await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, false, { asSticker: true })
 }
 
 handler.customPrefix = /wibu|vvibu|Wibu|WIBU|VVIBU|VVibu/
