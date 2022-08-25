@@ -239,6 +239,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌸Sewa bot', rowId: `${_p} sewa` },
           { title: '🌸menu mods', rowId: `${_p} mods1` },
           { title: '🌸Menu absen', rowId: `${_p} beban` },
+          { title: '🌸Tiktok owner', rowId: `${_p} akun` },
         ]
       }
     ]
